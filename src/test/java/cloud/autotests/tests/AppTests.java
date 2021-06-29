@@ -3,6 +3,8 @@ package cloud.autotests.tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,15 +12,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTests extends TestBase {
     @Test
-    @Description("Soon to be implemented by QA.GURU engineers")
+    @Description("Already implemented by QA.GURU engineers")
     @DisplayName("Dirty little test")
     void generatedTest() {
         step("Open https://rt.pornhub.com/", () -> {
-            // todo
+            open("");
         });
 
-        step("Check if \\"sexual welness\\" exist", () -> {
-            // todo
+        step("Check if 'sexual welness' exist", () -> {
+            $(byText("sexual welness")).shouldBe(visible);
         });
     }
 
